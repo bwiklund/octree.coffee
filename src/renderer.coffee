@@ -171,7 +171,7 @@ class Renderer
 
 
 renderer = new Renderer
-renderer.scene = new TerrainScene
+renderer.scene = new TestScene
 
 tick = ->
   renderer.doPass()

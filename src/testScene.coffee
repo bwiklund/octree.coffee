@@ -89,6 +89,7 @@ OctreeNode = @oc.OctreeNode
     depth = 4
     width = Math.pow 2, depth
 
-    for y in [0...width]
-      for x in [0...width]
-        @octree.setCell depth, [x,y,0]
+    for x in [0...width]
+      for z in [0...width]
+        y = width - ~~(1+Math.random()*2)
+        @octree.setCell depth, [x,y,z]

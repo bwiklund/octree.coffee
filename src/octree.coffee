@@ -75,8 +75,6 @@ class @oc.OctreeNode
 
     childIndex = childOffset[0] + childOffset[1]*2 + childOffset[2]*4
 
-    debugger if childIndex >= 8
-
     # create the next child node if we haven't yet
     @children ?= [null,null,null,null,null,null,null,null]
     @children[ childIndex ] ?= new OctreeNode
