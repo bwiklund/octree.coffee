@@ -42,8 +42,8 @@ class Renderer
     @canvas = document.createElement('canvas')
     @a = @canvas.getContext '2d'
 
-    @w = @canvas.width = 299
-    @h = @canvas.height = 299
+    @w = @canvas.width = 599
+    @h = @canvas.height = 599
 
     @imageData = @a.getImageData 0,0,@w,@h
     @data = @imageData.data
@@ -171,7 +171,7 @@ class Renderer
 
 
 renderer = new Renderer
-renderer.scene = new TestScene
+renderer.scene = new TerrainScene
 
 tick = ->
   renderer.doPass()

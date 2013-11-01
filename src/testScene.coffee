@@ -84,12 +84,15 @@ OctreeNode = @oc.OctreeNode
 
 @oc.TerrainScene = class TerrainScene
   constructor: ->
+
+    perlin = new ClassicalNoise
+
     @octree = new Octree
 
-    depth = 4
+    depth = 6
     width = Math.pow 2, depth
 
     for x in [0...width]
       for z in [0...width]
-        y = width - ~~(1+Math.random()*2)
+        y = ~~( width - 4 - perlin.noise(x/10,z/10,0)*4 )
         @octree.setCell depth, [x,y,z]
