@@ -58,7 +58,8 @@ class Renderer
 
 
   updateImageData: ->
-    for i in [0..@h*@w]
+    pixelCount = @h*@w
+    for i in [0...pixelCount]
       bufferI = 3 * i
       imageDataI = 4 * i
 
