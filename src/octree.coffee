@@ -37,10 +37,16 @@ class @oc.Octree
 class @oc.OctreeNode
   constructor: ->
     @children = null
-    @color = 
-      r: 0.4 + Math.random() * 0.3
-      g: 0.6 + Math.random() * 0.3
-      b: 0.1
+    if Math.random() < 0.99
+      @color = 
+        r: 0.3 + Math.random() * 0.2
+        g: 0.5 + Math.random() * 0.2
+        b: 0.1
+    else
+      @color =
+        r: 1
+        g: 0.9
+        b: 0
     @light = {r:0,g:0,b:0}
 
 
