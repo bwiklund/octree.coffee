@@ -1,4 +1,4 @@
-[<img src="https://raw.github.com/bwiklund/octree.coffee/master/docs/sample.png">](http://bwiklund.github.com/roboglyphics)
+[<img src="https://raw.github.com/bwiklund/octree.coffee/master/doc/sample.png">](http://bwiklund.github.com/roboglyphics)
 
 octree.coffee
 =============
