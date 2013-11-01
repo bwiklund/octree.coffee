@@ -37,17 +37,18 @@ class @oc.Octree
 class @oc.OctreeNode
   constructor: ->
     @children = null
-    if Math.random() < 0.99
+    if Math.random() < 0.7
       @color = 
-        r: 0.3 + Math.random() * 0.2
-        g: 0.5 + Math.random() * 0.2
-        b: 0.1
-    else
-      @color =
-        r: 1
+        r: 0.9
         g: 0.9
-        b: 0
-    @light = {r:0,g:0,b:0}
+        b: 0.9
+      @light = {r:0,g:0,b:0}
+    else 
+      @color = 
+        r: Math.random() * 0.96
+        g: Math.random() * 0.96
+        b: 0.5
+      @light = {r:0,g:0,b:0}
 
 
   setCell: (myDepth, targetDepth, myCoords, targetCoords) ->
