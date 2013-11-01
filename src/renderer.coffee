@@ -169,12 +169,12 @@ class Renderer
 
 
 
+if !window.jasmine # silly hack because lazy
+  renderer = new Renderer
+  renderer.scene = new TestScene
 
-# renderer = new Renderer
-# renderer.scene = new TestScene
+  tick = ->
+    renderer.doPass()
+    requestAnimationFrame tick
 
-# tick = ->
-#   renderer.doPass()
-#   requestAnimationFrame tick
-
-# tick()
+  tick()
