@@ -66,7 +66,6 @@ OctreeNode = @oc.OctreeNode
     max = 300
     maxDepth = 40
 
-
     populate = (node,depth) =>
       return if depth > maxDepth
       node.children = []
