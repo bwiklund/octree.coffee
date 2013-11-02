@@ -14,3 +14,17 @@ describe "vec", ->
   it "can normalize", ->
     x = 4 / Math.sqrt 4*4*3
     expect( new Vec(4,4,4).normalize() ).toEqual new Vec x,x,x
+
+  # this will very occasionally fail... because math
+  it "can generate random vectors on the unit sphere", ->
+    N = 1000
+    vecs = for i in [0..N]
+      vec = new Vec.randomUnitVector()
+      expect( vec.mag() <= 1.000000000001 ).toBe true
+      vec
+
+    averageVec = vecs.reduce( (acc,b) -> acc.get().add( b ) ).mult 1/N
+    expect( averageVec.mag() < 0.1 ).toEqual true
+
+    averageMag = vecs.map( (v) -> v.mag() ).reduce( (a,b) -> a+b ) / N
+    expect( averageMag ).toBe 1

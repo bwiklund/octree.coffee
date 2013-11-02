@@ -20,20 +20,20 @@
     @
 
   normalize: ->
-    mag = Math.sqrt @x*@x + @y*@y + @z*@z
+    mag = @mag()
     @x/=mag
     @y/=mag
     @z/=mag
     @
 
+  mag: ->
+    Math.sqrt @x*@x + @y*@y + @z*@z
 
-Vec.randomInUnitSphere = ->
-  z = 2 * Math.random() - 1
-  tmp = Math.sqrt 1 - z * z
-  x = Math.random() * tmp
-  y = Math.random() * tmp
-  new Vec x, y, z
-
+Vec.randomUnitVector = ->
+  theta = Math.random() * 2 * Math.PI
+  r = Math.sqrt( Math.random() )
+  z = Math.sqrt( 1 - r*r ) * if Math.random() > 0.5 then 1 else -1 # todo: cleverer math without conditional?
+  new Vec r * Math.cos(theta), r * Math.sin(theta), z
 
 Vec.randomInCube = ->
   new Vec(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1).normalize()

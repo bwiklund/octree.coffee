@@ -108,7 +108,7 @@ class Renderer
 
         # if foggyCollision < collision.dist
         #   org = org.get().add( foggyCollision-0.0000001 )
-        #   dir = Vec.randomInUnitSphere()
+        #   dir = Vec.randomUnitVector()
 
         if collision.dist != Infinity
 
@@ -125,7 +125,7 @@ class Renderer
           org = org.get().add( dir.mult(collision.dist-0.0000001) )
 
           # diffuse
-          diffuser = Vec.randomInUnitSphere()
+          diffuser = Vec.randomUnitVector()
 
           diffuseAmount = 10#0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
 
