@@ -3,58 +3,76 @@
 Octree = @oc.Octree
 OctreeNode = @oc.OctreeNode
 
+
+testSceneRandomNode = ->
+  if Math.random() < 0.7
+    color = 
+      r: 0.9
+      g: 0.9
+      b: 0.9
+    light = {r:0,g:0,b:0}
+  else 
+    color = 
+      r: Math.random() * 0.96
+      g: Math.random() * 0.96
+      b: 0.5
+    light = {r:0,g:0,b:0}
+  @diffuseAmount = 0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
+  new OctreeNode color, light, diffuseAmount
+
+
 @oc.TestScene = class TestScene
   constructor: ->
     @octree = new Octree
     @octree.root.children = [
-      new OctreeNode
+      testSceneRandomNode()
       null
       null
-      new OctreeNode
+      testSceneRandomNode()
       null
-      new OctreeNode
-      new OctreeNode
+      testSceneRandomNode()
+      testSceneRandomNode()
       null
     ]
     @octree.root.children[0].children = [
-      new OctreeNode
+      testSceneRandomNode()
       null
       null
-      new OctreeNode
+      testSceneRandomNode()
       null
-      new OctreeNode
-      new OctreeNode
+      testSceneRandomNode()
+      testSceneRandomNode()
       null
     ]
     @octree.root.children[0].children[0].children = [
-      new OctreeNode
+      testSceneRandomNode()
       null
       null
-      new OctreeNode
+      testSceneRandomNode()
       null
-      new OctreeNode
-      new OctreeNode
+      testSceneRandomNode()
+      testSceneRandomNode()
       null
     ]
     @octree.root.children[3].children = [
-      new OctreeNode
+      testSceneRandomNode()
       null
       null
-      new OctreeNode
+      testSceneRandomNode()
       null
-      new OctreeNode
-      new OctreeNode
+      testSceneRandomNode()
+      testSceneRandomNode()
       null
     ]
     @octree.root.children[6].children = [
       null
-      new OctreeNode
-      new OctreeNode
+      testSceneRandomNode()
+      testSceneRandomNode()
       null
-      new OctreeNode
+      testSceneRandomNode()
       null
       null
-      new OctreeNode
+      testSceneRandomNode()
     ]
 
 

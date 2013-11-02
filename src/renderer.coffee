@@ -127,8 +127,6 @@ class Renderer
           # diffuse
           diffuser = Vec.randomUnitVector().mult( 1/Math.random() )
 
-          diffuseAmount = 0.02#0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
-
           # make the reflective vector. also, ensure that the diffuse vector is pointing away from the normal
           if      collision.dist == collision.tVals[0] then dir.x *= -1; diffuser.x = -Math.abs(diffuser.x)
           else if collision.dist == collision.tVals[1] then dir.x *= -1; diffuser.x =  Math.abs(diffuser.x)
@@ -137,7 +135,7 @@ class Renderer
           else if collision.dist == collision.tVals[4] then dir.z *= -1; diffuser.z = -Math.abs(diffuser.z)
           else if collision.dist == collision.tVals[5] then dir.z *= -1; diffuser.z =  Math.abs(diffuser.z)
 
-          dir.add( diffuser.mult( diffuseAmount ) ).normalize()
+          dir.add( diffuser.mult( collision.node.diffuseAmount ) ).normalize()
 
 
         else
