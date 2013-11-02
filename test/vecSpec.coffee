@@ -25,6 +25,3 @@ describe "vec", ->
 
     averageVec = vecs.reduce( (acc,b) -> acc.get().add( b ) ).mult 1/N
     expect( averageVec.mag() < 0.1 ).toEqual true
-
-    averageMag = vecs.map( (v) -> v.mag() ).reduce( (a,b) -> a+b ) / N
-    expect( averageMag ).toBe 1
