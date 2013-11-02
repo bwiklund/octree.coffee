@@ -36,4 +36,4 @@ Vec.randomUnitVector = ->
   new Vec r * Math.cos(theta), r * Math.sin(theta), z
 
 Vec.randomInCube = ->
-  new Vec(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1).normalize()
+  new Vec(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)
