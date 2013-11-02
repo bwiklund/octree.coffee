@@ -29,6 +29,18 @@
   mag: ->
     Math.sqrt @x*@x + @y*@y + @z*@z
 
+  dot: (v) ->
+    @x*v.x + @y*v.y + @z*v.z
+
+  cross: (v) ->
+    x = @y*v.z - @z*v.y
+    y = @z*v.x - @x*v.z
+    z = @x*v.y - @y*v.x
+    @x = x
+    @y = y
+    @z = z
+    @
+
 Vec.randomUnitVector = ->
   theta = Math.random() * 2 * Math.PI
   r = Math.sqrt( Math.random() )
