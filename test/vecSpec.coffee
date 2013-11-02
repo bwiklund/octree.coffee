@@ -18,7 +18,7 @@ describe "vec", ->
   # this will very occasionally fail... because math
   it "can generate random vectors on the unit sphere", ->
     N = 1000
-    vecs = for i in [0..N]
+    vecs = for i in [0...N]
       vec = new Vec.randomUnitVector()
       expect( vec.mag() <= 1.000000000001 ).toBe true
       vec
