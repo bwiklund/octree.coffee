@@ -1,5 +1,6 @@
 @oc ?= {}
 
+
 @oc.Vec = class Vec
   constructor: (@x,@y,@z) ->
 
@@ -24,6 +25,7 @@
     @y/=mag
     @z/=mag
     @
+
 
 Vec.randomInUnitSphere = ->
   z = 2 * Math.random() - 1
