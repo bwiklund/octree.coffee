@@ -90,7 +90,7 @@ class Renderer
       dir.y += 1 * Math.random() / @w #aa
       dir.normalize()
 
-      org = new Vec 0.51, 0.51, -0.6
+      org = new Vec 0.51, 0.21, -0.6
 
       color = {r:1,g:1,b:1}
       light = {r:0,g:0,b:0}
