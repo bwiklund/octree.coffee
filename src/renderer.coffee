@@ -125,9 +125,9 @@ class Renderer
           org = org.get().add( dir.mult(collision.dist-0.0000001) )
 
           # diffuse
-          diffuser = Vec.randomUnitVector().mult( Math.random() )
+          diffuser = Vec.randomUnitVector().mult( 1/Math.random() )
 
-          diffuseAmount = 0.2#0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
+          diffuseAmount = 0.02#0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
 
           # make the reflective vector. also, ensure that the diffuse vector is pointing away from the normal
           if      collision.dist == collision.tVals[0] then dir.x *= -1; diffuser.x = -Math.abs(diffuser.x)
