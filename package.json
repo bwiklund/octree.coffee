@@ -1,0 +1,40 @@
+{
+  "name": "octree",
+  "version": "0.0.0",
+  "description": "An experiment in unbiased ray tracing with octrees in javascript (coffeescript).",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bwiklund/octree.git"
+  },
+  "keywords": [
+    "ray",
+    "tracer",
+    "coffeescript",
+    "octree",
+    "unbiased"
+  ],
+  "author": "Ben Wiklund",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/bwiklund/octree/issues"
+  },
+  "devDependencies": {
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.3",
+    "karma-requirejs": "~0.1.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma": "~0.10.4"
+  }
+}

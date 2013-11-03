@@ -17,7 +17,7 @@ testSceneRandomNode = ->
       g: Math.random() * 0.96
       b: 0.5
     light = {r:0,g:0,b:0}
-  @diffuseAmount = 0.1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
+  @diffuseAmount = 1 # 0 - 1, 0: mirror, 1: shiny, 10: pretty flat, 100: etc etc
   new OctreeNode color, light, diffuseAmount
 
 

@@ -141,7 +141,7 @@ class Renderer
         else
           break
 
-      # light = if dir.y < 0 then 2 else 0.5#Math.max(-dir.y,0)*1.15
+      #light = if dir.x < 0 && dir.y < 0 then r:1,g:1,b:1 else r:0,g:0,b:0#Math.max(-dir.y,0)*1.15
       light = r:1, g:1, b:1#@skybox.getColorForDir dir
 
       exposure = 1.1
