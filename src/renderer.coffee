@@ -11,7 +11,7 @@ class Skybox
   constructor: (@src,onLoaded) ->
     @image = new Image
     @image.src = @src
-    @image.onload = => 
+    @image.onload = =>
       @loadImageData()
       onLoaded()
 
@@ -42,8 +42,8 @@ class Renderer
     @canvas = document.createElement('canvas')
     @a = @canvas.getContext '2d'
 
-    @w = @canvas.width = 299
-    @h = @canvas.height = 299
+    @w = @canvas.width = 201
+    @h = @canvas.height = 201
 
     @imageData = @a.getImageData 0,0,@w,@h
     @data = @imageData.data
@@ -154,7 +154,7 @@ class Renderer
       # @buffer[i*3+0] += bounce / @maxBounces
       # @buffer[i*3+1] += bounce / @maxBounces
       # @buffer[i*3+2] += bounce / @maxBounces
-      
+
 
     @updateImageData()
 

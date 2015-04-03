@@ -42,12 +42,12 @@ class @oc.OctreeNode
   setCell: (myDepth, targetDepth, myCoords, targetCoords) ->
 
     # we will only ever get to the target depth if we are the right node.
-    # return this? also, should we truncate children if this 
+    # return this? also, should we truncate children if this
     # is called on a node with children, and make it terminal?
     if myDepth == targetDepth then return
 
     # here we do some clever math to determine the next child
-    # convert the target coords, and myCoords, into our child space, round down, 
+    # convert the target coords, and myCoords, into our child space, round down,
     # and subtract to get child in range of [0,0,0] -> [1,1,1]
     depthRemaining = targetDepth - myDepth
 
@@ -69,16 +69,16 @@ class @oc.OctreeNode
     @children[ childIndex ].setCell myDepth+1, targetDepth, targetCoordsInChildSpace, targetCoords
 
 
-  castRay: (r,currentDepth,lb,rt) ->
+  castRay: (r, currentDepth, lb, rt) ->
 
     collision = @rayBoxIntersect lb, rt, r
     return collision if collision.dist == Infinity # we missed
-    
+
     # we hit a terminal cell (yay)
     if @children == null
       # apply the diffuse color of this node
       return collision
-    
+
     #else, we need to look in the child nodes
 
     nextDepth = currentDepth + 1
@@ -116,7 +116,7 @@ class @oc.OctreeNode
   # rt: box corner 2
   # r: ray
   # returns: distance to instersection, or Infinity if no intersection
-  rayBoxIntersect: (lb,rt,r) ->
+  rayBoxIntersect: (lb, rt, r) ->
     # r.dir is unit direction vector of ray
     dirfracX = 1.0 / r.dir.x
     dirfracY = 1.0 / r.dir.y

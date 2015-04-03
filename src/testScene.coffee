@@ -6,13 +6,13 @@ OctreeNode = @oc.OctreeNode
 
 testSceneRandomNode = ->
   if Math.random() < 0.7
-    color = 
+    color =
       r: 0.9
       g: 0.9
       b: 0.9
     light = {r:0,g:0,b:0}
-  else 
-    color = 
+  else
+    color =
       r: Math.random() * 0.96
       g: Math.random() * 0.96
       b: 0.5

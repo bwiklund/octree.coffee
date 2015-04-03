@@ -1,4 +1,4 @@
 @oc ?= {}
 
 class @oc.Ray
-  constructor: (@org,@dir,@color,@light) ->
+  constructor: (@org, @dir, @color, @light) ->

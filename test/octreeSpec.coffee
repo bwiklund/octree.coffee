@@ -4,13 +4,13 @@ describe "octree", ->
   OctreeNode = window.oc.OctreeNode
   Ray = window.oc.Ray
 
-  
+
   it "exists", ->
     expect( new Octree ).not.toBe( null )
-  
+
 
   it "can collide against the root node", ->
-    octree = new Octree 
+    octree = new Octree
     ray = new Ray {x:0.5,y:0.5,z:-2}, {x:0,y:0,z:1}
 
     expect( octree.castRay( ray ).dist ).toBe( 2 )
@@ -48,7 +48,7 @@ describe "octree", ->
 
     it "works on 2 [0,0,0]", ->
       octree = new Octree
-      octree.setCell 2, [0,0,0] 
+      octree.setCell 2, [0,0,0]
       expect( octree.root.children[0].children[0] ).not.toBeNull()
 
     it "works on 2 [3,3,3]", ->
@@ -70,7 +70,3 @@ describe "octree", ->
       octree = new Octree
       octree.setCell 3, [2,2,2]
       expect( octree.root.children[0].children[7].children[0] ).not.toBeNull()
-
-
-
-
